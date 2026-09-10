@@ -1,13 +1,15 @@
-import { Suspense, lazy } from 'react';
+import { Suspense, lazy, forwardRef } from 'react';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
+
+const FallbackComponent = forwardRef<HTMLDivElement, any>((_props, ref) => (
+  <div ref={ref} className="w-full h-full flex items-center justify-center">
+    <p className="font-mono text-xs text-[#9CA3AF]">Scene unavailable</p>
+  </div>
+));
 
 const Spline = lazy(() =>
   import('@splinetool/react-spline').catch(() => ({
-    default: () => (
-      <div className="w-full h-full flex items-center justify-center">
-        <p className="font-mono text-xs text-[#9CA3AF]">Scene unavailable</p>
-      </div>
-    ),
+    default: FallbackComponent,
   }))
 );
 

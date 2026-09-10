@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { GlowEffect } from '@/components/ui/glow-effect';
 import MorphSlider, { type MorphSliderTransition } from '@/components/MorphSlider';
-import layeredWavesSvg from '@/assets/layered-waves-haikei.svg';
+
 import {
   Sparkles,
   ArrowUpRight,
