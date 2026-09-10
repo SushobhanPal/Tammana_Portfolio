@@ -16,8 +16,8 @@ export const PROFILE = {
   headline: "Building intelligent digital experiences with code and AI.",
   bio: "I am a Computer Science undergraduate at GIET University focusing on the intersection of modern web engineering and generative AI workflows. I design and build resilient architectures, LLM prompt pipelines, and intuitive user experiences where technical rigor solves genuine human friction.",
   email: "tamannakumari819@gmail.com",
-  github: "https://github.com/SushobhanPal", // Changed to the real repo owner for the portfolio
-  linkedin: "https://linkedin.com/", 
+  github: "https://github.com/TamannaKumariNaik/", // Changed to the real repo owner for the portfolio
+  linkedin: "https://linkedin.com/",
   location: "Odisha, India",
   university: "GIET University",
   degree: "B.Tech in Computer Science and Engineering",
@@ -32,7 +32,7 @@ export const PROJECTS: Project[] = [
     description: "An intelligent editorial platform engineered to empower authors. Translates raw draft prose into articulate writing through semantic analysis, prompt orchestration, and contextual synonyms.",
     technologies: ["React", "TypeScript", "Tailwind CSS", "OpenAI API", "Node.js"],
     metrics: "+38% Lexical Register Optimization",
-    githubUrl: "https://github.com/SushobhanPal/ai-writing-platform",
+    githubUrl: "https://github.com/TamannaKumariNaik/",
     imageUrl: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1600"
   },
   {
@@ -41,7 +41,7 @@ export const PROJECTS: Project[] = [
     category: "Creative WebGL",
     description: "A hardware-accelerated image deformation carousel built with OGL and GSAP. Features procedural noise distortion, chromatic aberration, and interactive physics.",
     technologies: ["WebGL", "GLSL Shaders", "React", "GSAP"],
-    githubUrl: "https://github.com/SushobhanPal",
+    githubUrl: "https://github.com/TamannaKumariNaik/",
     imageUrl: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1600"
   },
   {
@@ -51,7 +51,7 @@ export const PROJECTS: Project[] = [
     description: "Interactive token distance visualizer that calculates cosine similarity between high-register synonyms across academic corpora.",
     technologies: ["Python", "FastAPI", "TypeScript", "Canvas API"],
     metrics: "Sub-40ms Vector Traversal",
-    githubUrl: "https://github.com/SushobhanPal",
+    githubUrl: "https://github.com/TamannaKumariNaik/",
     imageUrl: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=1600"
   }
 ];

@@ -9,19 +9,18 @@ export default function Contact() {
     e.preventDefault();
     const form = e.currentTarget;
     setStatus('submitting');
-    
+
     try {
-      // If Web3Forms API key exists, use it. Otherwise simulate submission.
       const apiKey = import.meta.env.VITE_WEB3FORMS_KEY;
       if (apiKey) {
         const formData = new FormData(form);
         formData.append("access_key", apiKey);
-        
+
         const res = await fetch("https://api.web3forms.com/submit", {
           method: "POST",
           body: formData
         });
-        
+
         if (res.ok) {
           setStatus('success');
           form.reset();
@@ -29,7 +28,6 @@ export default function Contact() {
           setStatus('error');
         }
       } else {
-        // Fallback for simulation
         setTimeout(() => {
           setStatus('success');
           form.reset();
@@ -38,7 +36,7 @@ export default function Contact() {
     } catch (err) {
       setStatus('error');
     }
-    
+
     setTimeout(() => {
       if (status !== 'error') setStatus('idle');
     }, 5000);
@@ -48,13 +46,13 @@ export default function Contact() {
     <section id="contact" className="py-24 md:py-32 bg-zinc-900/30 border-y border-zinc-800/50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          
+
           <div>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Let's build something meaningful.</h2>
             <p className="text-lg text-zinc-400 mb-10">
               Open for Summer 2027 software engineering internships, technical writing contracts, and collaborative open-source system design.
             </p>
-            
+
             <div className="space-y-6">
               <a href={`mailto:${PROFILE.email}`} className="flex items-center gap-4 text-zinc-300 hover:text-cyan-400 transition-colors group">
                 <div className="w-12 h-12 bg-zinc-900 border border-zinc-800 rounded-xl flex items-center justify-center group-hover:border-cyan-500/50 transition-colors">
@@ -81,40 +79,40 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-zinc-400 mb-2">Name</label>
-                <input 
-                  type="text" 
-                  id="name" 
-                  name="name" 
-                  required 
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
                   className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition-colors"
-                  placeholder="Jane Doe"
+                  placeholder="your name"
                 />
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-zinc-400 mb-2">Email</label>
-                <input 
-                  type="email" 
-                  id="email" 
-                  name="email" 
-                  required 
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
                   className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition-colors"
-                  placeholder="jane@company.com"
+                  placeholder="email@company.com"
                 />
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-zinc-400 mb-2">Message</label>
-                <textarea 
-                  id="message" 
-                  name="message" 
-                  required 
+                <textarea
+                  id="message"
+                  name="message"
+                  required
                   rows={4}
                   className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition-colors resize-none"
                   placeholder="Tell me about your project..."
                 />
               </div>
-              
-              <button 
-                type="submit" 
+
+              <button
+                type="submit"
                 disabled={status === 'submitting'}
                 className="w-full bg-white text-black font-bold text-lg py-4 rounded-xl hover:bg-zinc-200 transition-colors flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
               >
@@ -122,7 +120,7 @@ export default function Contact() {
                   <>Send Message <Send className="w-5 h-5" /></>
                 )}
               </button>
-              
+
               {status === 'error' && (
                 <p className="text-red-400 text-sm text-center">Something went wrong. Please try again later.</p>
               )}
