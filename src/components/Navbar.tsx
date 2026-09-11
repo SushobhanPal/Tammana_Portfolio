@@ -1,8 +1,13 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, Moon, Sun, X } from 'lucide-react';
 import { PROFILE } from '../data/portfolio';
 
-export default function Navbar() {
+type NavbarProps = {
+  isLightTheme: boolean;
+  onToggleTheme: () => void;
+};
+
+export default function Navbar({ isLightTheme, onToggleTheme }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -39,6 +44,15 @@ export default function Navbar() {
               {link.name}
             </a>
           ))}
+          <button
+            type="button"
+            onClick={onToggleTheme}
+            aria-label={`Switch to ${isLightTheme ? 'dark' : 'light'} mode`}
+            title={`Switch to ${isLightTheme ? 'dark' : 'light'} mode`}
+            className="text-zinc-400 hover:text-white transition-colors p-2 rounded-md hover:bg-zinc-800"
+          >
+            {isLightTheme ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
+          </button>
           <a href="/resume.pdf" target="_blank" className="text-sm font-medium bg-white text-black px-4 py-2 rounded-md hover:bg-zinc-200 transition-colors">
             Resume
           </a>
@@ -61,6 +75,14 @@ export default function Navbar() {
           <a href="/resume.pdf" target="_blank" className="text-center font-medium bg-white text-black px-4 py-3 rounded-md hover:bg-zinc-200 transition-colors mt-2">
             View Resume
           </a>
+          <button
+            type="button"
+            onClick={onToggleTheme}
+            className="flex items-center justify-center gap-2 text-zinc-300 hover:text-white px-4 py-2 rounded-md hover:bg-zinc-800 transition-colors font-medium"
+          >
+            {isLightTheme ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
+            {isLightTheme ? 'Dark mode' : 'Light mode'}
+          </button>
         </div>
       )}
     </header>

@@ -20,3 +20,66 @@
 .border-hairline {
   border-color: #1F293D;
 }
+
+html.theme-light,
+html.theme-light body {
+  background-color: #f4f7f8;
+  color: #24313a;
+}
+
+.theme-light .bg-\[\#050505\],
+.theme-light .bg-black {
+  background-color: #f4f7f8;
+}
+
+.theme-light .bg-zinc-950 {
+  background-color: #e8eef0;
+}
+
+.theme-light .bg-zinc-900,
+.theme-light .bg-zinc-900\/30,
+.theme-light .bg-zinc-900\/20 {
+  background-color: #e9eff0;
+}
+
+.theme-light .bg-zinc-800 {
+  background-color: #dce5e7;
+}
+
+.theme-light .text-white {
+  color: #18252d;
+}
+
+.theme-light .text-zinc-200,
+.theme-light .text-zinc-300 {
+  color: #40515a;
+}
+
+.theme-light .text-zinc-400 {
+  color: #586b74;
+}
+
+.theme-light .text-zinc-500 {
+  color: #70828a;
+}
+
+.theme-light .border-zinc-800,
+.theme-light .border-zinc-800\/50,
+.theme-light .border-zinc-900,
+.theme-light .border-zinc-700,
+.theme-light .border-zinc-700\/50,
+.theme-light .border-white\/10 {
+  border-color: #cbd8dc;
+}
+
+.theme-light .hover\:bg-zinc-800:hover {
+  background-color: #dce5e7;
+}
+
+.theme-light .hover\:bg-zinc-200:hover {
+  background-color: #dce5e7;
+}
+
+.theme-light .hover\:text-white:hover {
+  color: #18252d;
+}
